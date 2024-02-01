@@ -28,7 +28,8 @@ class UptimeTracker:
             
             if start_index != -1 and end_index != -1:
                 datetime_str = input_string[start_index:end_index].strip()
-                return datetime.datetime.strptime(datetime_str, "%d-%m-%Y %I:%M:%S %p")
+                # Convert the datetime string to a datetime object with timezone information
+                return pytz.timezone('US/Pacific').localize(datetime.datetime.strptime(datetime_str, "%d-%m-%Y %I:%M:%S %p"))
             else:
                 raise ValueError("Datetime format not found in the input string.")
         except ValueError as e:
