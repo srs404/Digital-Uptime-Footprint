@@ -1,4 +1,4 @@
-import datetime
+import datetime, os
 import pytz  # Import the pytz library
 
 class UptimeTracker:
@@ -61,20 +61,41 @@ class UptimeTracker:
             pass
 
         max_line_length = max(len(line) for line in existing_lines) if existing_lines else 0
-        
+
         # Create new lines with aligned "|"
         with open(self.log_file, "a") as file:
             if self.__uptime is not None:
-                line = f"| UPTIME :: {self.__uptime.strftime('%d-%m-%Y %I:%M:%S %p %Z')} | DOWNTIME :: {downtime} |"
+
+                # Convert downtime to Format
+                downtime = self.__current_time - self.__uptime
+        
+                days = downtime.days
+                seconds = downtime.seconds
+                hours, remainder = divmod(seconds, 3600)
+                minutes, seconds = divmod(remainder, 60)
+        
+                downtime_str = ""
+                if days > 0:
+                    downtime_str += f"{days} Days, "
+                if hours > 0:
+                    downtime_str += f"{hours} Hours, "
+                if minutes > 0:
+                    downtime_str += f"{minutes} Minutes, "
+                if seconds > 0 or downtime_str == "":
+                    downtime_str += f"{seconds} Seconds"
+        
+                downtime_str.strip()  # Remove trailing space
+
+                line = f" DOWNTIME :: {downtime_str} |"
                 file.write(line + "\n")
                 
                 # Append the current uptime line
-                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} | Active... |"
-                file.write(line + "\n")
+                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} | "
+                file.write(line)
             else:
                 # If there's no previous uptime, just write the current uptime line
-                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} | Active... |"
-                file.write(line + "\n")
+                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} | "
+                file.write(line)
 
 if __name__ == "__main__":
     tracker = UptimeTracker()
