@@ -45,11 +45,8 @@ class UptimeTracker:
     def calculate_downtime(self):
         if self.__uptime is not None:
             downtime = self.__current_time - self.__uptime
-            days = downtime.days
-            seconds = downtime.seconds
-            hours, remainder = divmod(seconds, 3600)
-            minutes, seconds = divmod(remainder, 60)
-            return f"{days} Days {hours} Hours {minutes} Minutes {seconds} Seconds"
+            return downtime
+
         return None
 
     def write_to_log(self):
@@ -67,15 +64,17 @@ class UptimeTracker:
         
         # Create new lines with aligned "|"
         with open(self.log_file, "a") as file:
-            if downtime:
+            if self.__uptime is not None:
                 line = f"| UPTIME :: {self.__uptime.strftime('%d-%m-%Y %I:%M:%S %p %Z')} | DOWNTIME :: {downtime} |"
-            else:
+                file.write(line + "\n")
+                
+                # Append the current uptime line
                 line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} | Active... |"
-            
-            # Pad the line with spaces to match the maximum line length
-            line = line.ljust(max_line_length) + "\n"
-            
-            file.write(line)
+                file.write(line + "\n")
+            else:
+                # If there's no previous uptime, just write the current uptime line
+                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} | Active... |"
+                file.write(line + "\n")
 
 if __name__ == "__main__":
     tracker = UptimeTracker()
