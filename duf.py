@@ -3,7 +3,7 @@ import pytz  # Import the pytz library
 
 class UptimeTracker:
     def __init__(self):
-        self.log_file = "log.txt"
+        self.log_file = "uptime.txt"
         self.__uptime = self.get_last_uptime()
         self.__current_time = datetime.datetime.now(pytz.timezone('US/Pacific'))  # Specify the timezone here
     
@@ -90,11 +90,11 @@ class UptimeTracker:
                 file.write(line + "\n")
                 
                 # Append the current uptime line
-                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} | "
+                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
                 file.write(line)
             else:
                 # If there's no previous uptime, just write the current uptime line
-                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} | "
+                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
                 file.write(line)
 
 if __name__ == "__main__":
