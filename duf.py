@@ -103,6 +103,6 @@ if __name__ == "__main__":
 
     # Git Commit and Push
     os.system("git add .")
-    os.system("git commit -m 'Updated Uptime'")
+    os.system("git commit -m 'Updated_Uptime'")
     os.system("git push")
 
