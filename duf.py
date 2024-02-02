@@ -105,4 +105,3 @@ if __name__ == "__main__":
     os.system("git add .")
     os.system("git commit -m 'Updated_Uptime'")
     os.system("git push origin main")
-
