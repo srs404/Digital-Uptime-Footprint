@@ -3,7 +3,7 @@ import pytz  # Import the pytz library
 
 class UptimeTracker:
     def __init__(self):
-        self.log_file = "readme.md"
+        self.log_file = "uptime.txt"
         self.__uptime = self.get_last_uptime()
         self.__current_time = datetime.datetime.now(pytz.timezone('US/Pacific'))  # Specify the timezone here
     
@@ -12,7 +12,7 @@ class UptimeTracker:
             with open(self.log_file, "r") as file:
                 lines = file.readlines()
                 for line in reversed(lines):
-                    if "UPTIME" in line:
+                    if "ACTIVE" in line:
                         uptime_str = line.strip()
                         return self.extract_datetime(uptime_str)
         except FileNotFoundError:
@@ -23,7 +23,7 @@ class UptimeTracker:
             # Remove the "PST" part from the input string
             input_string = input_string.replace("PST", "").strip()
             
-            start_index = input_string.find("| UPTIME :: ") + len("| UPTIME :: ")
+            start_index = input_string.find("| ACTIVE :: ") + len("| ACTIVE :: ")
             end_index = input_string.find(" |", start_index)
             
             if start_index != -1 and end_index != -1:
@@ -86,15 +86,15 @@ class UptimeTracker:
         
                 downtime_str.strip()  # Remove trailing space
 
-                line = f" DOWNTIME :: {downtime_str} | <br>"
+                line = f" DIFFERENCE :: {downtime_str} | <br>"
                 file.write(line + "\n")
                 
                 # Append the current uptime line
-                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
+                line = f"| ACTIVE :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
                 file.write(line)
             else:
                 # If there's no previous uptime, just write the current uptime line
-                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
+                line = f"| ACTIVE :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
                 file.write(line)
 
 if __name__ == "__main__":
