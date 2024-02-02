@@ -57,6 +57,8 @@ class UptimeTracker:
         try:
             with open(self.log_file, "r") as file:
                 existing_lines = file.readlines()
+                if existing_lines:
+                    existing_lines = [line.strip() for line in existing_lines]
         except FileNotFoundError:
             pass
 
@@ -86,7 +88,7 @@ class UptimeTracker:
         
                 downtime_str.strip()  # Remove trailing space
 
-                line = f" DIFFERENCE :: {downtime_str} |"
+                line = f" DIFFERENCE :: {downtime_str} | <br>"
                 file.write(line + "\n")
                 
                 # Append the current uptime line

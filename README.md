@@ -12,7 +12,8 @@ Track when I log into my laptop to do work related stuffs. A fun little automati
 
 # My Digital Footprint:
 
-| ACTIVE :: 01-02-2024 07:08:36 PM PST | DIFFERENCE :: 2 Minutes, 20 Seconds |
-| ACTIVE :: 01-02-2024 07:10:56 PM PST |
- DIFFERENCE :: 1 Minutes, 35 Seconds |
+| ACTIVE :: 01-02-2024 07:08:36 PM PST | DIFFERENCE :: 2 Minutes, 20 Seconds | <br>
+| ACTIVE :: 01-02-2024 07:10:56 PM PST | DIFFERENCE :: 1 Minutes, 35 Seconds | <br>
 | ACTIVE :: 01-02-2024 07:12:31 PM PST |
+ DIFFERENCE :: 2 Minutes, 11 Seconds | <br>
+| ACTIVE :: 01-02-2024 07:14:42 PM PST |
