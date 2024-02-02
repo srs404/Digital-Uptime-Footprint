@@ -8,4 +8,5 @@ This is my digital uptime and productivity tracker, implemented in my laptop for
  DIFFERENCE :: 11 Hours, 22 Minutes, 45 Seconds | <br>
 | LOGGED IN :: 01-02-2024 06:34:42 PM PST | DIFFERENCE :: 11 Hours, 23 Minutes, 25 Seconds | <br>
 | LOGGED IN :: 01-02-2024 06:35:22 PM PST | DIFFERENCE :: 11 Hours, 23 Minutes, 29 Seconds | <br>
-| LOGGED IN :: 01-02-2024 06:35:26 PM PST |
+| LOGGED IN :: 01-02-2024 06:35:26 PM PST | DIFFERENCE :: 11 Hours, 23 Minutes, 41 Seconds | <br>
+| LOGGED IN :: 01-02-2024 06:35:38 PM PST |
