@@ -102,6 +102,6 @@ if __name__ == "__main__":
     tracker.write_to_log()
 
     # Git Commit and Push
-    os.system("git add .")
+    os.system("git add *")
     os.system("git commit -m 'Updated_Uptime'")
     os.system("git push origin main")
