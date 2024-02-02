@@ -16,4 +16,5 @@ Track when I log into my laptop to do work related stuffs. A fun little automati
 | ACTIVE :: 01-02-2024 07:10:56 PM PST | DIFFERENCE :: 1 Minutes, 35 Seconds | <br>
 | ACTIVE :: 01-02-2024 07:12:31 PM PST |
  DIFFERENCE :: 2 Minutes, 11 Seconds | <br>
-| ACTIVE :: 01-02-2024 07:14:42 PM PST |
+| ACTIVE :: 01-02-2024 07:14:42 PM PST | DIFFERENCE :: 6 Seconds | <br>
+| ACTIVE :: 01-02-2024 07:14:48 PM PST |
