@@ -86,15 +86,15 @@ class UptimeTracker:
         
                 downtime_str.strip()  # Remove trailing space
 
-                line = f" DIFFERENCE :: {downtime_str} | <br>"
+                line = f" DOWNTIME :: {downtime_str} | <br>"
                 file.write(line + "\n")
                 
-                # Append the current LOGGED IN line
-                line = f"| LOGGED IN :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
+                # Append the current uptime line
+                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
                 file.write(line)
             else:
-                # If there's no previous LOGGED IN, just write the current LOGGED IN line
-                line = f"| LOGGED IN :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
+                # If there's no previous uptime, just write the current uptime line
+                line = f"| UPTIME :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
                 file.write(line)
 
 if __name__ == "__main__":
