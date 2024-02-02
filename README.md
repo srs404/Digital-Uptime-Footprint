@@ -11,4 +11,5 @@ This is my digital uptime and productivity tracker, implemented in my laptop for
 | UPTIME :: 01-02-2024 07:16:40 AM PST | DOWNTIME :: 7 Hours, 44 Minutes, 52 Seconds | <br>
 | UPTIME :: 01-02-2024 03:01:32 PM PST |
  DOWNTIME :: 3 Hours, 25 Minutes, 21 Seconds | <br>
-| UPTIME :: 01-02-2024 06:26:53 PM PST |
+| UPTIME :: 01-02-2024 06:26:53 PM PST | DOWNTIME :: 35 Seconds | <br>
+| UPTIME :: 01-02-2024 06:27:28 PM PST |
