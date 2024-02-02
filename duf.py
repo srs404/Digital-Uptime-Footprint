@@ -1,12 +1,43 @@
 import datetime, os
-import pytz  # Import the pytz library
+import pytz
 
+'''
+# Title: Uptime Tracker (Class)
+# ~ Description: This class is used to track the uptime of a system and write the uptime and downtime to a log file.
+
+@Methods:
+    - get_last_uptime
+    - extract_datetime
+    - calculate_downtime
+    - write_to_log
+
+@Example: tracker = UptimeTracker()
+            tracker.write_to_log()
+
+@Note: The log file should be in the format of a markdown file.
+        The log file should contain the "ACTIVE" keyword to identify the uptime.
+        The log file should contain the "DIFFERENCE" keyword to identify the downtime.
+        The timezone is set to "US/Pacific" in this example.
+        
+        The log file last lines should be in the following format:
+        | ACTIVE :: 01-01-2021 12:00:00 AM | DIFFERENCE :: 0 Days, 0 Hours, 0 Minutes, 0 Seconds | <br>
+        | ACTIVE :: 01-01-2021 12:00:00 AM |
+'''
 class UptimeTracker:
     def __init__(self):
-        self.log_file = "README.md"
-        self.__uptime = self.get_last_uptime()
+        self.log_file = "README.md" # Specify the log file here
+        self.__uptime = self.get_last_uptime() # Get the last uptime from the log file
         self.__current_time = datetime.datetime.now(pytz.timezone('US/Pacific'))  # Specify the timezone here
     
+    '''
+    # Title: get_last_uptime
+    # ~ Description: This function reads the log file and returns the last uptime.
+
+    @Parameters: self (implicit)
+    @Returns: The last uptime as a datetime object, or None if the uptime is not found.
+
+    @Example: get_last_uptime() -> datetime.datetime(2021, 1, 1, 0, 0, tzinfo=<DstTzInfo 'US/Pacific' PST-1 day, 16:00:00 STD>)
+    '''
     def get_last_uptime(self):
         try:
             with open(self.log_file, "r") as file:
@@ -18,6 +49,19 @@ class UptimeTracker:
         except FileNotFoundError:
             return None
     
+    '''
+    # Title: extract_datetime
+    # ~ Description: This function extracts the datetime from the input string.
+
+    @Parameters: self (implicit), input_string (str)
+    @Returns: The datetime as a datetime object, or None if the datetime is not found.
+
+    @Example: extract_datetime("| ACTIVE :: 01-01-2021 12:00:00 AM |") -> datetime.datetime(2021, 1, 1, 0, 0, tzinfo=<DstTzInfo 'US/Pacific' PST-1 day, 16:00:00 STD>)
+
+    @Note: The input string should be in the format "| ACTIVE :: 01-01-2021 12:00:00 AM |".
+            The timezone is set to "US/Pacific" in this example.
+            The input string should contain the "ACTIVE" keyword.
+    '''
     def extract_datetime(self, input_string):
         try:
             # Remove the "PST" part from the input string
@@ -36,12 +80,13 @@ class UptimeTracker:
             print(e)
             return None
 
-    def get_uptime(self):
-        return self.__uptime
+    '''
+    # Title: calculate_downtime
+    # ~ Description: This function calculates the downtime by subtracting the current time from the uptime.
 
-    def get_current_time(self):
-        return self.__current_time
-
+    @Parameters: self (implicit)
+    @Returns: The downtime as a datetime object, or None if the uptime is not set.
+    '''
     def calculate_downtime(self):
         if self.__uptime is not None:
             downtime = self.__current_time - self.__uptime
@@ -49,6 +94,13 @@ class UptimeTracker:
 
         return None
 
+    '''
+    # Title: write_to_log
+    # ~ Description: This function writes the current uptime and downtime to the log file.
+
+    @Parameters: self (implicit)
+    @Returns: None
+    '''
     def write_to_log(self):
         downtime = self.calculate_downtime()
         
@@ -62,9 +114,10 @@ class UptimeTracker:
         except FileNotFoundError:
             pass
 
+        # Calculate the maximum line length
         max_line_length = max(len(line) for line in existing_lines) if existing_lines else 0
 
-        # Create new lines with aligned "|"
+        # Write the uptime and downtime to the log file
         with open(self.log_file, "a") as file:
             if self.__uptime is not None:
 
@@ -96,9 +149,16 @@ class UptimeTracker:
                 file.write(line)
             else:
                 # If there's no previous uptime, just write the current uptime line
+                # Note: If you have previous markdown lines, you need to add dummy lines to the log file to maintain the 
+                # markdown table format. For example, if the last line is "| ACTIVE :: 01-01-2021 12:00:00 AM |"
                 line = f"| ACTIVE :: {self.__current_time.strftime('%d-%m-%Y %I:%M:%S %p %Z')} |"
                 file.write(line)
 
+
+'''-----------------------------------------------------------------------------------------------------------------
+# Title: Main Driver Code
+# ~ Description: This is the main driver code for the uptime tracker.
+'''
 if __name__ == "__main__":
     tracker = UptimeTracker()
     tracker.write_to_log()
