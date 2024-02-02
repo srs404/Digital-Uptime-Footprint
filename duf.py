@@ -3,7 +3,7 @@ import pytz  # Import the pytz library
 
 class UptimeTracker:
     def __init__(self):
-        self.log_file = "uptime.txt"
+        self.log_file = "readme.md"
         self.__uptime = self.get_last_uptime()
         self.__current_time = datetime.datetime.now(pytz.timezone('US/Pacific'))  # Specify the timezone here
     
