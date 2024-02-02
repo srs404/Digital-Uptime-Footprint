@@ -4,9 +4,8 @@ This is my digital uptime and productivity tracker, implemented in my laptop for
 
 # My Time Tracker
 
-| UPTIME :: 01-02-2024 07:11:57 AM PST | DOWNTIME :: 25 Seconds |
- DIFFERENCE :: 11 Hours, 22 Minutes, 45 Seconds | <br>
-| LOGGED IN :: 01-02-2024 06:34:42 PM PST | DIFFERENCE :: 11 Hours, 23 Minutes, 25 Seconds | <br>
-| LOGGED IN :: 01-02-2024 06:35:22 PM PST | DIFFERENCE :: 11 Hours, 23 Minutes, 29 Seconds | <br>
-| LOGGED IN :: 01-02-2024 06:35:26 PM PST | DIFFERENCE :: 11 Hours, 23 Minutes, 41 Seconds | <br>
-| LOGGED IN :: 01-02-2024 06:35:38 PM PST |
+| UPTIME :: 01-02-2024 06:26:53 PM PST | DOWNTIME :: 1 Minutes, 27 Seconds | <br>
+| UPTIME :: 01-02-2024 06:28:20 PM PST | DOWNTIME :: 14 Seconds | <br>
+| UPTIME :: 01-02-2024 06:28:34 PM PST |
+ DIFFERENCE :: 7 Minutes, 35 Seconds | <br>
+| LOGGED IN :: 01-02-2024 06:36:09 PM PST |
