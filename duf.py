@@ -86,7 +86,7 @@ class UptimeTracker:
         
                 downtime_str.strip()  # Remove trailing space
 
-                line = f" DIFFERENCE :: {downtime_str} | <br>"
+                line = f" DIFFERENCE :: {downtime_str} |"
                 file.write(line + "\n")
                 
                 # Append the current uptime line
