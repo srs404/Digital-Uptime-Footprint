@@ -13,7 +13,7 @@ Track when I log into my laptop to do work related stuffs. A fun little automati
 - Fork This Github Repository
 - Create a `shortcut` of `duf.py`
 - Copy the `shortcut` and paste it inside the `startup` folder.
-  - `Note:` To open the startup folder, click `CTRL + R` button together and type `shell:startup`
+  - **Note:** To open the startup folder, click `CTRL + R` button together and type `shell:startup`
 - And you'll have your own Automated `Digital Footprint Tracker`
 
 # My Digital Footprint:
@@ -27,5 +27,7 @@ DIFFERENCE :: 2 Minutes, 11 Seconds | <br>
 | ACTIVE :: 01-02-2024 07:15:01 PM PST | DIFFERENCE :: 13 Seconds | <br>
 | ACTIVE :: 01-02-2024 07:15:14 PM PST | DIFFERENCE :: 3 Seconds | <br>
 | ACTIVE :: 01-02-2024 07:15:17 PM PST |
- DIFFERENCE :: 3 Minutes, 50 Seconds | <br>
+DIFFERENCE :: 3 Minutes, 50 Seconds | <br>
 | ACTIVE :: 01-02-2024 07:19:07 PM PST |
+ DIFFERENCE :: 1 Minutes, 8 Seconds | <br>
+| ACTIVE :: 01-02-2024 07:20:15 PM PST |
