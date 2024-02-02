@@ -7,6 +7,5 @@ This is my digital uptime and productivity tracker, implemented in my laptop for
 | UPTIME :: 01-02-2024 06:26:53 PM PST | DOWNTIME :: 1 Minutes, 27 Seconds | <br>
 | UPTIME :: 01-02-2024 06:28:20 PM PST | DOWNTIME :: 14 Seconds | <br>
 | UPTIME :: 01-02-2024 06:28:34 PM PST |
- DOWNTIME :: 8 Minutes, 28 Seconds | <br>
-| UPTIME :: 01-02-2024 06:37:02 PM PST | DIFFERENCE :: 2 Minutes, 4 Seconds | <br>
-| UPTIME :: 01-02-2024 06:39:06 PM PST |
+ DOWNTIME :: 10 Minutes, 52 Seconds | <br>
+| UPTIME :: 01-02-2024 06:39:26 PM PST |
